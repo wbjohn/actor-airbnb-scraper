@@ -73,7 +73,7 @@
                                 "format": "text",
                                 "field": "amenities"
                           }, {
-                            "label": "photos", 
+                            "label": "Photos", 
                             "format": "text",
                             "field": "photos"
                           }

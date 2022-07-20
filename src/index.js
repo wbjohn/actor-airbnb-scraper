@@ -122,6 +122,12 @@ Apify.main(async () => {
           log.info(JSON.stringify(entry));
         }
 
+        const { photos } = detail;
+
+        for (const entry of Object.entries(photos)) {
+          log.info(JSON.stringify(entry));
+        }
+
         const { listing_amenities } = detail;
         const available_amenities = listing_amenities.filter((amenity) => {
           return amenity.is_present;

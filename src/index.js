@@ -146,7 +146,7 @@ Apify.main(async () => {
                                 { url: pricingDetailsUrl, id: detail.id });
                             const pricingResult = await doReq(pricingDetailsUrl);
                             const { pdp_listing_booking_details } = pricingResult;
-                            log.info(JSON.stringify(pricingResult))
+                            log.info(JSON.stringify(Object.keys(pricingResult)))
                             const { available, rate_type: rateType, base_price_breakdown } = pdp_listing_booking_details[0];
                             const { amount, amount_formatted: amountFormatted, is_micros_accuracy: isMicrosAccuracy } = base_price_breakdown[0];
 

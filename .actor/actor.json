@@ -57,7 +57,7 @@
                           { 
                               "label": "Price",
                               "format": "text",
-                              "field": "pricing.price_items[0].total.amount"
+                              "field": "pricing.total"
                           },
                           { 
                               "label": "Reviews",
@@ -68,6 +68,14 @@
                               "label": "URL",
                               "format": "link",
                               "field": "url"
+                          }, {
+                                "label": "Amenities",
+                                "format": "text",
+                                "field": "amenities"
+                          }, {
+                            "label": "photos", 
+                            "format": "text",
+                            "field": "photos"
                           }
                       ]
                   }

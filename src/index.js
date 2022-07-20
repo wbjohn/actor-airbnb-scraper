@@ -118,20 +118,28 @@ Apify.main(async () => {
         const json = await doReq(request.url);
         const { pdp_listing_detail: detail } = json;
 
-        for (const entry of Object.entries(detail)) {
-          log.info(JSON.stringify(entry));
-        }
+        // for (const entry of Object.entries(detail)) {
+        //   log.info(JSON.stringify(entry));
+        // }
 
         const { photos } = detail;
 
-        for (const entry of Object.entries(photos)) {
-          log.info(JSON.stringify(entry));
-        }
+        // for (const entry of Object.entries(photos)) {
+        //   log.info(JSON.stringify(entry));
+        // }
+
+        const photoUrls = photos.map((photo) => photo[1].large);
 
         const { listing_amenities } = detail;
-        const available_amenities = listing_amenities.filter((amenity) => {
-          return amenity.is_present;
-        });
+        const available_amenities = listing_amenities
+          .filter((amenity) => {
+            return amenity.is_present;
+          })
+          .map((amenity) => {
+            return amenity.id;
+          });
+
+        log.info("amenities");
         log.info(JSON.stringify(available_amenities));
 
         // checking for no longer available details
@@ -186,6 +194,8 @@ Apify.main(async () => {
           reviews,
           pricing: {},
           valuePairs,
+          photos: photoUrls,
+          amenities: available_amenities,
         };
 
         if (request.userData.pricing && request.userData.pricing.rate) {

@@ -146,34 +146,57 @@ Apify.main(async () => {
                                 { url: pricingDetailsUrl, id: detail.id });
                             const pricingResult = await doReq(pricingDetailsUrl);
                             const { pdp_listing_booking_details } = pricingResult;
-                            log.info(JSON.stringify(Object.keys(pdp_listing_booking_details[0])))
                             const { available, rate_type: rateType, base_price_breakdown } = pdp_listing_booking_details[0];
-//                             log.info(JSON.stringify(Object.keys(base_price_breakdown[0])))
+
+                            // keys of pdp_listing_booking_details[0]
+                            //   [
+                            //   "available",
+                            //   "base_price_breakdown",
+                            //   "can_instant_book",
+                            //   "check_in",
+                            //   "check_out",
+                            //   "extra_guest_fee",
+                            //   "guests",
+                            //   "guest_details",
+                            //   "nights",
+                            //   "p3_cancellation_section",
+                            //   "p3_display_rate",
+                            //   "pricing_quote_request_uuid",
+                            //   "privacy_settings",
+                            //   "rate_type",
+                            //   "should_show_from_label",
+                            //   "id",
+                            //   "price",
+                            //   "localized_cancellation_policy_name",
+                            //   "cancellation_policy_label",
+                            //   "tax_amount_usd",
+                            //   "deposit_upsell_message_data",
+                            //   "discount_data",
+                            //   "localized_unavailability_message",
+                            //   "cancellation_policies",
+                            //   "price_context",
+                            //   "localized_book_it_button_text",
+                            //   "localized_unavailability_message_position_string",
+                            //   "bar_price",
+                            //   "is_eligible_for_hotel_booking_flow",
+                            //   "book_it_button_by_placement",
+                            //   "product_rate_sections",
+                            //   "localized_selected_dates",
+                            //   "redirect_to_messaging",
+                            //   "should_default_biz_toggle_for_covid19",
+                            //   "highlights_section"
+                            // ]
                             
                             for (const entry of Object.entries(pdp_listing_booking_details[0])) {
                                 log.info(JSON.stringify(entry))   
                             }
-//                             for (const entry of Object.entries(base_price_breakdown[0])) {
-//                                 log.info(JSON.stringify(entry))   
-//                             }
-                            
-                            const { amount, amount_formatted: amountFormatted, is_micros_accuracy: isMicrosAccuracy } = base_price_breakdown[0];
+
+                            const { price } = pdp_listing_booking_details[0];
 
                             if (available) {
                                 simpleResult.pricing = {
-                                    rate: {
-                                        amount,
-                                        amountFormatted,
-                                        currency: base_price_breakdown[0].currency,
-                                        isMicrosAccuracy,
-                                    },
                                     rateType,
-                                    rateWithServiceFee: {
-                                        amount,
-                                        amountFormatted,
-                                        currency: base_price_breakdown[0].currency,
-                                        isMicrosAccuracy,
-                                    },
+                                    ...price
                                 };
                             }
                         }

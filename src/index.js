@@ -195,6 +195,11 @@ Apify.main(async () => {
 
                             const { price } = pdp_listing_booking_details[0];
 
+                           for (const entry of Object.entries(price)) {
+                                log.info(entry)   
+                           }
+                            
+                            
                             if (available) {
                                 simpleResult.pricing = {
                                     rateType,

@@ -70,14 +70,16 @@
                               "label": "URL",
                               "format": "link",
                               "field": "url"
-                          }, {
-                                "label": "Amenities",
-                                "format": "text",
-                                "field": "amenities"
-                          }, {
-                            "label": "Photos", 
-                            "format": "text",
-                            "field": "photos"
+                          }, 
+                          {
+                              "label": "Amenities",
+                              "format": "text",
+                              "field": "amenities"
+                          }, 
+                          {
+                              "label": "Photos", 
+                              "format": "text",
+                              "field": "photos"
                           }
                       ]
                   }

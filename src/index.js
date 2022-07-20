@@ -287,9 +287,9 @@ Apify.main(async () => {
 
               const { price } = pdp_listing_booking_details[0];
 
-              for (const entry of Object.entries(price)) {
-                log.info(JSON.stringify(entry));
-              }
+              //   for (const entry of Object.entries(price)) {
+              //     log.info(JSON.stringify(entry));
+              //   }
 
               if (available) {
                 simpleResult.pricing = {

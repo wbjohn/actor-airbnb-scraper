@@ -119,14 +119,14 @@ Apify.main(async () => {
         const { pdp_listing_detail: detail } = json;
 
         for (const entry of Object.entries(detail)) {
-          log.info(entry);
+          log.info(JSON.stringify(entry));
         }
 
         const { listing_amenities } = detail;
         const available_amenities = listing_amenities.filter((amenity) => {
           return amenity.is_present;
         });
-        log.info(available_amenities);
+        log.info("amenities", JSON.stringify(available_amenities));
 
         // checking for no longer available details
         if (

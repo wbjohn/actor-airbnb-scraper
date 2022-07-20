@@ -92,7 +92,12 @@ Apify.main(async () => {
                 const json = await doReq(request.url);
                 const { pdp_listing_detail: detail } = json;
                 
-                log.info(JSON.stringify(json))
+                for (const entry of Object.entries(json)) {
+                    log.info(entry)   
+                }
+                
+                const {listing_amenities } = json
+                const available_amenities = listing_amenities.filter(amenity => amenity.is_present)
 
                 // checking for no longer available details
                 if (!detail && json.error_message === 'Unfortunately, this is no longer available.') {

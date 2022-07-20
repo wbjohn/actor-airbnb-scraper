@@ -126,7 +126,7 @@ Apify.main(async () => {
         const available_amenities = listing_amenities.filter((amenity) => {
           return amenity.is_present;
         });
-        log.info("amenities", JSON.stringify(available_amenities));
+        log.info(JSON.stringify(available_amenities));
 
         // checking for no longer available details
         if (
@@ -272,7 +272,7 @@ Apify.main(async () => {
               const { price } = pdp_listing_booking_details[0];
 
               for (const entry of Object.entries(price)) {
-                log.info(entry);
+                log.info(JSON.stringify(entry));
               }
 
               if (available) {

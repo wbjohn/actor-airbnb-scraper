@@ -22,7 +22,9 @@
                           "numberOfGuests",
                           "pricing",
                           "reviews",
-                          "url"
+                          "url",
+                          "amenities",
+                          "photos"
                       ]
 
                   },
@@ -57,7 +59,7 @@
                           { 
                               "label": "Price",
                               "format": "text",
-                              "field": "pricing.total"
+                              "field": "pricing.total.amount"
                           },
                           { 
                               "label": "Reviews",

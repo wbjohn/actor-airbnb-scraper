@@ -68,6 +68,8 @@ const getBuildListingUrlFnc = ({
         if (checkOut) {
             url.searchParams.set('checkout', checkOut);
         }
+        
+        url.searchParams.set('amenities[]', 47)
 
         return url.toString();
     };

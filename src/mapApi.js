@@ -2,7 +2,6 @@ const Apify = require('apify');
 const turf = require('@turf/turf');
 
 const { DISTANCE_METERS } = require('./constants');
-const { meterPrecision } = require('./tools');
 
 const { log, sleep } = Apify.utils;
 
@@ -61,6 +60,13 @@ const LOCATION_CLASSES = {
     LANDUSE: 'landuse',
     BOUNDARY: 'boundary',
 };
+
+/**
+ * Converts floating geopoint to ~113m precision (3 decimals)
+ */
+function meterPrecision(value) {
+    return +(+`${value}`).toFixed(3);
+}
 
 function getPolygons(geoJson, distanceKilometers) {
     const { coordinates, type } = geoJson;

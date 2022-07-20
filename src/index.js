@@ -128,7 +128,7 @@ Apify.main(async () => {
         //   log.info(JSON.stringify(entry));
         // }
 
-        const photoUrls = photos.map((photo) => photo[1].large);
+        const photoUrls = photos.map((photo) => photo.large);
 
         const { listing_amenities } = detail;
         const available_amenities = listing_amenities

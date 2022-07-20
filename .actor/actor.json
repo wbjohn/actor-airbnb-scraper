@@ -57,7 +57,7 @@
                           { 
                               "label": "Price",
                               "format": "text",
-                              "field": "pricing.rate.amount_formatted"
+                              "field": "pricing.price_items[0].total.amount"
                           },
                           { 
                               "label": "Reviews",

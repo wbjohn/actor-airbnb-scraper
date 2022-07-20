@@ -150,12 +150,12 @@ Apify.main(async () => {
                             const { available, rate_type: rateType, base_price_breakdown } = pdp_listing_booking_details[0];
                             log.info(JSON.stringify(Object.keys(base_price_breakdown[0])))
                             
-                            for (const entry of Object.entries(pdp_listing_booking_details[0])) {
-                                log.info(JSON.stringify(entry))   
-                            }
-                            for (const entry of Object.entries(base_price_breakdown[0])) {
-                                log.info(JSON.stringify(entry))   
-                            }
+//                             for (const entry of Object.entries(pdp_listing_booking_details[0])) {
+//                                 log.info(JSON.stringify(entry))   
+//                             }
+//                             for (const entry of Object.entries(base_price_breakdown[0])) {
+//                                 log.info(JSON.stringify(entry))   
+//                             }
                             
                             const { amount, amount_formatted: amountFormatted, is_micros_accuracy: isMicrosAccuracy } = base_price_breakdown[0];
 

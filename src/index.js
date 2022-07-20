@@ -91,6 +91,8 @@ Apify.main(async () => {
             } else if (isHomeDetail) {
                 const json = await doReq(request.url);
                 const { pdp_listing_detail: detail } = json;
+                
+                log.info(JSON.stringify(json))
 
                 // checking for no longer available details
                 if (!detail && json.error_message === 'Unfortunately, this is no longer available.') {
@@ -187,9 +189,9 @@ Apify.main(async () => {
                             //   "highlights_section"
                             // ]
                             
-                            for (const entry of Object.entries(pdp_listing_booking_details[0])) {
-                                log.info(JSON.stringify(entry))   
-                            }
+//                             for (const entry of Object.entries(pdp_listing_booking_details[0])) {
+//                                 log.info(JSON.stringify(entry))   
+//                             }
 
                             const { price } = pdp_listing_booking_details[0];
 

@@ -139,8 +139,8 @@ Apify.main(async () => {
             return amenity.id;
           });
 
-        log.info("amenities");
-        log.info(JSON.stringify(available_amenities));
+        // log.info("amenities");
+        // log.info(JSON.stringify(available_amenities));
 
         // checking for no longer available details
         if (
@@ -187,7 +187,7 @@ Apify.main(async () => {
         } = result;
         const simpleResult = {
           url: `https://www.airbnb.com/rooms/${detail.id}`,
-          id: detail.id,
+          airbnbId: detail.id,
           name: p3SummaryTitle,
           stars: starRating,
           numberOfGuests: parseInt(guestLabel.match(/\d+/)[0], 10),
@@ -244,11 +244,8 @@ Apify.main(async () => {
               );
               const pricingResult = await doReq(pricingDetailsUrl);
               const { pdp_listing_booking_details } = pricingResult;
-              const {
-                available,
-                rate_type: rateType,
-                base_price_breakdown,
-              } = pdp_listing_booking_details[0];
+              const { available, rate_type: rateType } =
+                pdp_listing_booking_details[0];
 
               // keys of pdp_listing_booking_details[0]
               //   [

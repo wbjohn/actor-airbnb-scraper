@@ -139,9 +139,9 @@ Apify.main(async () => {
             return amenity.id;
           });
 
-        for (const entry of Object.entries(listing_amenities)) {
-          log.info(JSON.stringify(entry));
-        }
+        // for (const entry of Object.entries(listing_amenities)) {
+        //   log.info(JSON.stringify(entry));
+        // }
 
         // log.info("amenities");
         // log.info(JSON.stringify(available_amenities));

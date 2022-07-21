@@ -27,7 +27,8 @@
                           "amenities",
                           "photos",
                           "city",
-                          "country"
+                          "country",
+                          "calendar"
                       ]
 
                   },
@@ -73,6 +74,11 @@
                               "label": "Reviews",
                               "format": "text",
                               "field": "reviews"
+                          },
+                          { 
+                              "label": "Calendar",
+                              "format": "text",
+                              "field": "calendar"
                           },
                           { 
                               "label": "URL",

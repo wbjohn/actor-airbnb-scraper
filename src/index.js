@@ -170,6 +170,11 @@ Apify.main(async () => {
           : [];
 
         const result = camelcaseKeysRecursive(detail);
+
+        const searchLocation = locationQuery.toLowerCase().split(",");
+        const city = searchLocation[0].trim().replace(/\s/g, "-");
+        const country = searchLocation[1].trim().replace(/\s/g, "-");
+
         const {
           locationTitle,
           starRating,
@@ -182,6 +187,7 @@ Apify.main(async () => {
         } = result;
         const simpleResult = {
           url: `https://www.airbnb.com/rooms/${detail.id}`,
+          id: detail.id,
           name: p3SummaryTitle,
           stars: starRating,
           numberOfGuests: parseInt(guestLabel.match(/\d+/)[0], 10),
@@ -196,6 +202,8 @@ Apify.main(async () => {
           valuePairs,
           photos: photoUrls,
           amenities: available_amenities,
+          city,
+          country,
         };
 
         if (request.userData.pricing && request.userData.pricing.rate) {

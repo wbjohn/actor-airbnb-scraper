@@ -15,6 +15,7 @@
                   "description": "",
                   "transformation": {
                       "fields": [
+                          "id",
                           "name",
                           "roomType",
                           "stars",
@@ -24,7 +25,9 @@
                           "reviews",
                           "url",
                           "amenities",
-                          "photos"
+                          "photos",
+                          "city",
+                          "country"
                       ]
 
                   },
@@ -80,7 +83,17 @@
                               "label": "Photos", 
                               "format": "text",
                               "field": "photos"
-                          }
+                          },
+                          {
+                            "label": "City",
+                            "format": "text",
+                            "field": "city"
+                          },
+                            {
+                                "label": "Country",
+                                "format": "text",
+                                "field": "country"
+                            }
                       ]
                   }
               }

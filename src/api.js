@@ -72,6 +72,9 @@ const getBuildListingUrlFnc = ({ checkIn, checkOut, currency = "USD" }) => {
     url.searchParams.set("amenities[]", 47);
     url.searchParams.append("amenities[]", 4);
 
+    url.searchParams.append("room_types[]", "Entire home");
+    url.searchParams.append("room_types[]", "Private room");
+
     return url.toString();
   };
 

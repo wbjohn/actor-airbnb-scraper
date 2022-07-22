@@ -211,6 +211,8 @@ Apify.main(async () => {
           bedrooms: detail.bedroom_label
             ? detail.bedroom_label.split(" ")[0]
             : 0,
+          monthChecked: checkIn.split("-")[1],
+          yearChecked: checkIn.split("-")[0],
         };
 
         if (request.userData.pricing && request.userData.pricing.rate) {

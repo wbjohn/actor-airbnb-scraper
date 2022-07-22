@@ -28,8 +28,9 @@
                           "photos",
                           "city",
                           "country",
-                          "calendar",
-                          "bedrooms"
+                          "bedrooms",
+                          "monthChecked",
+                          "yearChecked"
                       ]
 
                   },
@@ -77,11 +78,6 @@
                               "field": "reviews"
                           },
                           { 
-                              "label": "Calendar",
-                              "format": "text",
-                              "field": "calendar"
-                          },
-                          { 
                               "label": "URL",
                               "format": "link",
                               "field": "url"
@@ -109,6 +105,14 @@
                                 "label": "Bedrooms",
                                 "format": "number",
                                 "field": "bedrooms"
+                            }, {
+                                "label": "Month checked",
+                                "format": "number",
+                                "field": "monthChecked"
+                            }, {
+                                "label": "Year checked",
+                                "format": "number",
+                                "field": "yearChecked"
                             }
                       ]
                   }

@@ -30,7 +30,8 @@
                           "country",
                           "bedrooms",
                           "monthChecked",
-                          "yearChecked"
+                          "yearChecked",
+                          "amenitiesDetails"
                       ]
 
                   },
@@ -91,6 +92,11 @@
                               "label": "Photos", 
                               "format": "text",
                               "field": "photos"
+                          },
+                          {
+                            "label": "Amenities Details",
+                            "format": "text",
+                            "field": "amenitiesDetails"
                           },
                           {
                             "label": "City",

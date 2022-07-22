@@ -208,6 +208,9 @@ Apify.main(async () => {
           amenities: available_amenities,
           city,
           country,
+          bedrooms: detail.bedroom_label
+            ? detail.bedroom_label.split(" ")[0]
+            : 0,
         };
 
         if (request.userData.pricing && request.userData.pricing.rate) {

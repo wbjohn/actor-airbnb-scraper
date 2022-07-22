@@ -28,7 +28,8 @@
                           "photos",
                           "city",
                           "country",
-                          "calendar"
+                          "calendar",
+                          "bedrooms"
                       ]
 
                   },
@@ -104,6 +105,10 @@
                                 "label": "Country",
                                 "format": "text",
                                 "field": "country"
+                            }, {
+                                "label": "Bedrooms",
+                                "format": "number",
+                                "field": "bedrooms"
                             }
                       ]
                   }

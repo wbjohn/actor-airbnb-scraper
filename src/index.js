@@ -214,6 +214,7 @@ Apify.main(async () => {
           monthChecked: checkIn.split("-")[1],
           yearChecked: checkIn.split("-")[0],
           amenitiesDetails: listing_amenities,
+          description: detail.sectioned_description,
         };
 
         if (request.userData.pricing && request.userData.pricing.rate) {

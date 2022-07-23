@@ -31,7 +31,8 @@
                           "bedrooms",
                           "monthChecked",
                           "yearChecked",
-                          "amenitiesDetails"
+                          "amenitiesDetails",
+                          "description"
                       ]
 
                   },
@@ -119,6 +120,10 @@
                                 "label": "Year checked",
                                 "format": "number",
                                 "field": "yearChecked"
+                            }, {
+                                "label": "Description",
+                                "format": "text",
+                                "field": "description"
                             }
                       ]
                   }

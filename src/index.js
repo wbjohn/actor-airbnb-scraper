@@ -103,6 +103,7 @@ Apify.main(async () => {
     maxConcurrency,
     handleRequestTimeoutSecs: HANDLE_REQUEST_TIMEOUT_SECS,
     useSessionPool: true,
+    maxRetries: 2,
     handleRequestFunction: async ({ request, session }) => {
       const {
         isHomeDetail,
@@ -215,6 +216,7 @@ Apify.main(async () => {
           yearChecked: checkIn.split("-")[0],
           amenitiesDetails: listing_amenities,
           description: detail.sectioned_description,
+          fullDetails: detail,
         };
 
         if (request.userData.pricing && request.userData.pricing.rate) {

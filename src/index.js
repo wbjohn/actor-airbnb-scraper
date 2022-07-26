@@ -219,8 +219,8 @@ Apify.main(async () => {
           bedrooms: detail.bedroom_label
             ? detail.bedroom_label.split(" ")[0]
             : 0,
-          monthChecked: checkin ? checkIn.split("-")[1] : null,
-          yearChecked: checkin ? checkIn.split("-")[0] : null,
+          monthChecked: checkIn ? checkIn.split("-")[1] : null,
+          yearChecked: checkIn ? checkIn.split("-")[0] : null,
           amenitiesDetails: listing_amenities,
           description: detail.sectioned_description,
           fullDetails: detail,

@@ -32,7 +32,8 @@
                           "monthChecked",
                           "yearChecked",
                           "amenitiesDetails",
-                          "description"
+                          "description",
+                          "calendar"
                       ]
 
                   },

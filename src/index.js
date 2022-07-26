@@ -223,7 +223,7 @@ Apify.main(async () => {
           yearChecked: checkIn ? checkIn.split("-")[0] : null,
           amenitiesDetails: listing_amenities,
           description: detail.sectioned_description,
-          fullDetails: detail,
+          // fullDetails: detail,
         };
 
         if (request.userData.pricing && request.userData.pricing.rate) {

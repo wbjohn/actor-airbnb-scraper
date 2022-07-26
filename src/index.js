@@ -103,7 +103,6 @@ Apify.main(async () => {
     maxConcurrency,
     handleRequestTimeoutSecs: HANDLE_REQUEST_TIMEOUT_SECS,
     useSessionPool: true,
-    maxRetries: 2,
     handleRequestFunction: async ({ request, session }) => {
       const {
         isHomeDetail,

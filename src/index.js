@@ -221,7 +221,7 @@ Apify.main(async () => {
             : 0,
           monthChecked: checkIn ? checkIn.split("-")[1] : null,
           yearChecked: checkIn ? checkIn.split("-")[0] : null,
-          amenitiesDetails: listing_amenities,
+          // amenitiesDetails: listing_amenities,
           description: detail.sectioned_description,
           // fullDetails: detail,
         };

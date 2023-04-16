@@ -211,15 +211,25 @@ const enqueueLocationQueryRequests = async (
       buildListingUrlFnc
     );
     log.info(`Location query: ${cityQuery}`);
-    // const areaList = await cityToAreas(cityQuery, doReq, limitPoints, timeoutMs);
+    const areaList = await cityToAreas(
+      cityQuery,
+      doReq,
+      limitPoints,
+      timeoutMs
+    );
 
-    // if (areaList.length === 0) {
-    //     log.info('Cannot divide location query into smaller areas!');
-    // } else {
-    //     for (const area of areaList) {
-    //         await addListings({ minPrice, maxPrice }, area, requestQueue, buildListingUrlFnc);
-    //     }
-    // }
+    if (areaList.length === 0) {
+      log.info("Cannot divide location query into smaller areas!");
+    } else {
+      for (const area of areaList) {
+        await addListings(
+          { minPrice, maxPrice },
+          area,
+          requestQueue,
+          buildListingUrlFnc
+        );
+      }
+    }
   }
 };
 

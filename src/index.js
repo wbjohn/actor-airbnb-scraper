@@ -175,6 +175,14 @@ Apify.main(async () => {
 
         const result = camelcaseKeysRecursive(detail);
 
+        const city = locationQuery
+          ? locationQuery.toLowerCase().split(",")[0].trim().replace(/\s/g, "-")
+          : null;
+
+        const country = locationQuery
+          ? locationQuery.toLowerCase().split(",")[1].trim().replace(/\s/g, "-")
+          : null;
+
         const {
           locationTitle,
           starRating,
@@ -193,29 +201,14 @@ Apify.main(async () => {
           numberOfGuests: parseInt(guestLabel.match(/\d+/)[0], 10),
           address: locationTitle,
           roomType: roomAndPropertyType,
-          location: {
-            lat,
-            lng,
-          },
+          location: { lat, lng },
           reviews,
           pricing: {},
           valuePairs,
           photos: photoUrls,
           amenities: available_amenities,
-          city: locationQuery
-            ? locationQuery
-                .toLowerCase()
-                .split(",")[0]
-                .trim()
-                .replace(/\s/g, "-")
-            : null,
-          country: locationQuery
-            ? locationQuery
-                .toLowerCase()
-                .split(",")[1]
-                .trim()
-                .replace(/\s/g, "-")
-            : null,
+          city,
+          country,
           bedrooms: detail.bedroom_label
             ? detail.bedroom_label.split(" ")[0]
             : 0,
